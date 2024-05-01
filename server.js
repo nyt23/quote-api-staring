@@ -18,7 +18,7 @@ app.get('/api/quotes/random', (req, res) => {
 // task 2
 app.get('/api/quotes', (req, res) => {
     if (Object.keys(req.query).length === 0) {
-        res.status(200).send(quotes); // but it returns status 304 instead of 200
+        res.status(200).send(quotes); // but it returns status 304 instead of 200, resolved after body-parser
     } else if (req.query.person) {
         const filteredQuote = quotes.find(quote => quote.person.replace(/\s/g, '') === req.query.person);
         //console.log(filteredQuote);
